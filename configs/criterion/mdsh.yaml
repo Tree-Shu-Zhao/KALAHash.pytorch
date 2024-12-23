@@ -1,0 +1,16 @@
+NAME: MDSH
+BITS: ${model.hash_head.BITS}
+NUM_CLASSES: ${dataset.NUM_CLASSES}
+LAMBDA: 0.0001
+
+similarity_criterion:
+  NAME: MDSH
+  DATASET_NAME: ${dataset.NAME}
+  NUM_CLASSES: ${dataset.NUM_CLASSES}
+  BITS: ${model.hash_head.BITS}
+  EPOCH_CHANGE: 9
+  CENTER_PATH: ${DATA_DIR}/cache/
+  BETA: 1.0
+
+quantization_criterion:
+  NAME: L1

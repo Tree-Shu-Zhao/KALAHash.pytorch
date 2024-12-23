@@ -1,0 +1,18 @@
+NAME: KalaHash
+CLIP_BACKBONE: ViT-B/32
+CRITERION_NAME: ${criterion.NAME}
+HIDDEN_DIM: 512
+BN_MOMENTUM: 0.1
+
+hash_head:
+  BITS: 16
+
+lora:
+  ENABLE: True
+  TYPE: clora
+  CLIP_BACKBONE: ${model.CLIP_BACKBONE}
+  LORA_START_LAYERS: 11
+  LORA_POSITION: ['k', 'v']
+  RANK: 8
+  LORA_STRENGTH: 0.5
+  HIDDEN_DIM: 768

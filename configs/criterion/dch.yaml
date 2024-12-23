@@ -1,0 +1,13 @@
+NAME: DCH
+LAMBDA: 0.1
+GAMMA: 5
+
+similarity_criterion:
+  NAME: DCH
+  GAMMA: ${criterion.GAMMA}
+  BITS: ${model.hash_head.BITS}
+
+quantization_criterion:
+  NAME: Cauchy
+  GAMMA: ${criterion.GAMMA}
+  BITS: ${model.hash_head.BITS}

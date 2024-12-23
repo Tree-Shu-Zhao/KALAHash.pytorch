@@ -1,0 +1,22 @@
+# @package _global_
+defaults:
+  - _self_
+  - dataset: cifar-10
+  - model: clip-hashing
+  - criterion: clip-hashing
+  - train: default
+  - test: default
+  - experiment: null
+  - hparams_search: null
+
+DATA_DIR: data
+OUTPUT_DIR: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+EXP_NOTE: null
+SEED: 42
+
+hydra:
+  sweep:
+    dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}
+  run:
+    dir: ${OUTPUT_DIR}

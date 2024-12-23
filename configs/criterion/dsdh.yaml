@@ -1,0 +1,12 @@
+NAME: DSDH
+DSDH_MU: 0.1
+DSDH_NU: 1.0
+DSDH_ETA: 0.1
+DCC_ITER: 10
+BITS: ${model.hash_head.BITS}
+
+similarity_criterion:
+  NAME: DPSH
+
+quantization_criterion:
+  NAME: L2

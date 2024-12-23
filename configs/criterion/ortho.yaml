@@ -1,0 +1,16 @@
+NAME: Ortho
+QUAN: 1.0
+
+similarity_criterion:
+  NAME: Ortho
+  DATASET_NAME: ${dataset.NAME}
+  NUM_CLASSES: ${dataset.NUM_CLASSES}
+  BITS: ${model.hash_head.BITS}
+  SCALE: 5.0
+  MARGIN: 0.3
+  MARGIN_TYPE: cos
+  MULTICLASS_LOSS: label_smoothing
+  CODEBOOK: B
+
+quantization_criterion:
+  NAME: L2

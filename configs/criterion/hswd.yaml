@@ -1,0 +1,11 @@
+NAME: HSWD
+LAMBDA: 0.1
+
+similarity_criterion:
+  NAME: HashNet
+  HASHNET_ALPHA: 1.0
+  HASHNET_STEP: 100
+
+quantization_criterion:
+  NAME: SWD
+  NUM_PROJECTIONS: 10000
