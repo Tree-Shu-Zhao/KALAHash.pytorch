@@ -1,6 +1,0 @@
-NAME: HashNet
-
-similarity_criterion:
-  NAME: HashNet
-  HASHNET_ALPHA: 1.0
-  HASHNET_STEP: 100

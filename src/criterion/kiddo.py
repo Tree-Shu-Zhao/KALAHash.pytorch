@@ -8,9 +8,8 @@ class KiddoCriterion(nn.Module):
         self.cfg = cfg
 
         # Build similarity and quantization criterion
-        self.sim_criterion_name = cfg.similarity_criterion.NAME.lower()
-        self.sim_criterion = SimLoss(cfg.similarity_criterion)
-        self.qua_criterion = QuantizationLoss(cfg.quantization_criterion)
+        self.sim_criterion = SimLoss()
+        self.qua_criterion = QuantizationLoss()
 
         self.alpha = cfg.ALPHA
         self.beta = cfg.BETA
@@ -69,7 +68,7 @@ class KiddoCriterion(nn.Module):
             self.B = B
 
 class SimLoss(nn.Module):
-    def __init__(self, cfg):
+    def __init__(self):
         super().__init__()
     
     def forward(self, feats, labels, current_epoch=None):
@@ -80,7 +79,7 @@ class SimLoss(nn.Module):
         return sim_loss
 
 class QuantizationLoss(nn.Module):
-    def __init__(self, cfg):
+    def __init__(self):
         super().__init__()
     
     def forward(self, U, B):

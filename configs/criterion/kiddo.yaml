@@ -4,9 +4,3 @@ BETA: 1.0
 GAMMA: 1.0
 NUM_DCC: 10
 BITS: ${model.hash_head.BITS}
-
-similarity_criterion:
-  NAME: DPSH
-
-quantization_criterion:
-  NAME: L2
