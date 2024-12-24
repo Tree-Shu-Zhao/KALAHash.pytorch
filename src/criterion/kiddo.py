@@ -1,9 +1,6 @@
 import torch
 import torch.nn as nn
 
-from .quantization_loss import build_quantization_criterion
-from .similarity_loss import build_similarity_criterion
-
 
 class KiddoCriterion(nn.Module):
     def __init__(self, cfg, num_train, train_onehot_labels):
@@ -12,8 +9,8 @@ class KiddoCriterion(nn.Module):
 
         # Build similarity and quantization criterion
         self.sim_criterion_name = cfg.similarity_criterion.NAME.lower()
-        self.sim_criterion = build_similarity_criterion(cfg.similarity_criterion)
-        self.qua_criterion = build_quantization_criterion(cfg.quantization_criterion)
+        self.sim_criterion = SimLoss(cfg.similarity_criterion)
+        self.qua_criterion = QuantizationLoss(cfg.quantization_criterion)
 
         self.alpha = cfg.ALPHA
         self.beta = cfg.BETA
@@ -39,18 +36,18 @@ class KiddoCriterion(nn.Module):
         sim_loss = self.sim_criterion(image_hash_features, onehot_labels, outputs["current_epoch"])
         qua_loss = self.qua_criterion(image_hash_features, self.B[:, idx].t())
         logits = self.B[:, idx].t() @ self.W
-        W_cls_loss = (onehot_labels - logits).pow(2).mean()
+        ali_loss = (onehot_labels - logits).pow(2).mean()
 
         loss = (
             self.cfg.GAMMA * sim_loss
-            + self.alpha * W_cls_loss
+            + self.alpha * ali_loss
             + self.beta * qua_loss
         )
 
         return {
             "loss": loss,
             "sim_loss": sim_loss,
-            "cls_loss": W_cls_loss,
+            "ali_loss": ali_loss,
             "qua_loss": qua_loss,
         }
 
@@ -70,3 +67,21 @@ class KiddoCriterion(nn.Module):
                     B[i, :] = (p - B_prime.t() @ W_prime @ w).sign()
 
             self.B = B
+
+class SimLoss(nn.Module):
+    def __init__(self, cfg):
+        super().__init__()
+    
+    def forward(self, feats, labels, current_epoch=None):
+        theta = feats @ feats.t() / 2
+        sim_matrix = (labels @ labels.t() > 0).float()
+        sim_loss = ((1 + (-theta.abs()).exp()).log() + theta.clamp(min=0) - sim_matrix * theta).mean()
+
+        return sim_loss
+
+class QuantizationLoss(nn.Module):
+    def __init__(self, cfg):
+        super().__init__()
+    
+    def forward(self, U, B):
+        return (U - B.sign()).pow(2).mean()
