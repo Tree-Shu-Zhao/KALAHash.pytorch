@@ -49,7 +49,7 @@ data
     └── classnames.txt
 ```
 
-For CIFAR-10, we download the [dataset](https://www.cs.toronto.edu/~kriz/cifar.html) and convert it to RGB images.
+For CIFAR-10, we download the [dataset](https://www.cs.toronto.edu/~kriz/cifar.html) and convert it to RGB images. You can download it from [Google Drive](https://drive.google.com/file/d/1Dvh4Aiz5n0rm29lwxpCUhz0qr-aY_UVP/view?usp=sharing)
 
 For NUS-WIDE, we obtain it from [DeepHash-pytorch
 ](https://github.com/swuxyj/DeepHash-pytorch).
