@@ -86,3 +86,5 @@ TBD
 ## Acknowledgement
 
 [CLIP-LoRA](https://github.com/MaxZanella/CLIP-LoRA)
+
+[DeepHash-pytorch](https://github.com/swuxyj/DeepHash-pytorch)
