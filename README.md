@@ -77,7 +77,7 @@ python src/main.py experiment=kalahash_cifar10_1s_16b test.EVAL_ONLY=True test.C
 
 ## 🤖 Model
 
-To ensure reproducibility, we provide [model checkpoints](https://drive.google.com/drive/folders/1AsQUJ0o3kAKi0a9LBrHcdDVGlKT4X2Zp?usp=sharing)
+To ensure reproducibility, we provide [model checkpoints](https://drive.google.com/drive/folders/1AsQUJ0o3kAKi0a9LBrHcdDVGlKT4X2Zp?usp=sharing).
 
 ## 📄 Citation
 
