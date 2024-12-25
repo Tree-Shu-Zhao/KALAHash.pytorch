@@ -1,0 +1,28 @@
+# @package _global_
+defaults:
+  - override /dataset: cifar-10
+  - override /model: kalahash
+  - override /criterion: kiddo
+  - override /train: default
+  - override /test: default
+
+train:
+  TUNE_IMAGE_ENCODER: False
+  NUM_SHOTS: 1
+
+model:
+  lora:
+    ENABLE: True
+    RANK: 1
+    LORA_STRENGTH: 1.0
+  hash_head:
+    BITS: 16
+
+criterion:
+  ALPHA: 0.1
+  BETA: 1.0
+  GAMMA: 3.0
+  similarity_criterion:
+    NAME: DPSH
+
+EXP_NOTE: OURS_CIRAR10_1S_16B

@@ -1,0 +1,6 @@
+NAME: KIDDO
+ALPHA: 0.1
+BETA: 1.0
+GAMMA: 1.0
+NUM_DCC: 10
+BITS: ${model.hash_head.BITS}
