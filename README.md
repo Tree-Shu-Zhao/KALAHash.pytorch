@@ -49,7 +49,7 @@ data
     └── classnames.txt
 ```
 
-For CIFAR-10, we download the [dataset](https://www.cs.toronto.edu/~kriz/cifar.html) and convert it to RGB images. You can download it from [Google Drive](https://drive.google.com/file/d/1Dvh4Aiz5n0rm29lwxpCUhz0qr-aY_UVP/view?usp=sharing)
+For CIFAR-10, we download the [dataset](https://www.cs.toronto.edu/~kriz/cifar.html) and convert it to RGB images. You can download it from [Google Drive](https://drive.google.com/file/d/1Dvh4Aiz5n0rm29lwxpCUhz0qr-aY_UVP/view?usp=sharing).
 
 For NUS-WIDE, we obtain it from [DeepHash-pytorch
 ](https://github.com/swuxyj/DeepHash-pytorch).
@@ -77,7 +77,7 @@ python src/main.py experiment=kalahash_cifar10_1s_16b test.EVAL_ONLY=True test.C
 
 ## 🤖 Model
 
-To ensure reproducibility, we provide model checkpoints of KALAHash: https://drive.google.com/drive/folders/1AsQUJ0o3kAKi0a9LBrHcdDVGlKT4X2Zp?usp=sharing
+To ensure reproducibility, we provide [model checkpoints](https://drive.google.com/drive/folders/1AsQUJ0o3kAKi0a9LBrHcdDVGlKT4X2Zp?usp=sharing)
 
 ## 📄 Citation
 
