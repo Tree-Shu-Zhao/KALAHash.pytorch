@@ -2,7 +2,7 @@
 
 ## 🎯 Project Overview
 
-This repository contains the code and resources for our paper.
+This repository contains the code and resources for our paper KALAHash: Knowledge-Anchored Low-Resource Adaptation for Deep Hashing (AAAI25).
 
 ## 💻 System Information
 
@@ -81,7 +81,14 @@ To ensure reproducibility, we provide [model checkpoints](https://drive.google.c
 
 ## 📄 Citation
 
-TBD
+```bibtex
+@article{zhao2024kalahash,
+  title={KALAHash: Knowledge-Anchored Low-Resource Adaptation for Deep Hashing},
+  author={Shu Zhao and Tan Yu and Xiaoshuai Hao and Wenchao Ma and Vijaykrishnan Narayanan},
+  journal={arXiv preprint arXiv:2412.19417},
+  year={2024}
+}
+```
 
 ## Acknowledgement
 
