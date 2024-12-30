@@ -95,3 +95,9 @@ To ensure reproducibility, we provide [model checkpoints](https://drive.google.c
 [CLIP-LoRA](https://github.com/MaxZanella/CLIP-LoRA)
 
 [DeepHash-pytorch](https://github.com/swuxyj/DeepHash-pytorch)
+
+[ConceptHash](https://github.com/kamwoh/concepthash)
+
+[OrthoHash](https://github.com/kamwoh/orthohash)
+
+[One Loss For Quantization](https://github.com/khoadoan106/single_loss_quantization)
