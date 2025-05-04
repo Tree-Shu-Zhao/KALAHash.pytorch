@@ -82,11 +82,14 @@ To ensure reproducibility, we provide [model checkpoints](https://drive.google.c
 ## 📄 Citation
 
 ```bibtex
-@article{zhao2024kalahash,
+@inproceedings{zhao2025kalahash,
   title={KALAHash: Knowledge-Anchored Low-Resource Adaptation for Deep Hashing},
-  author={Shu Zhao and Tan Yu and Xiaoshuai Hao and Wenchao Ma and Vijaykrishnan Narayanan},
-  journal={arXiv preprint arXiv:2412.19417},
-  year={2024}
+  author={Zhao, Shu and Yu, Tan and Hao, Xiaoshuai and Ma, Wenchao and Narayanan, Vijaykrishnan},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={39},
+  number={10},
+  pages={10465--10473},
+  year={2025}
 }
 ```
 
